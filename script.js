@@ -25,6 +25,11 @@ function addNewEmployee() {
             '<td>' + $('#salaryInput').val() + '</td>' +
         '</tr>'
     );
+    $('#firstNameInput').val('');
+    $('#lastNameInput').val('');
+    $('#idInput').val('');
+    $('#titleInput').val('');
+    $('#salaryInput').val('');
 }
 
 function updateTotalSalary() {
@@ -33,5 +38,8 @@ function updateTotalSalary() {
     totalMonthly += monthlySalary;
     $('#monthlyCost').text('Total Monthly: $' + totalMonthly.toFixed(2));
     console.log(totalMonthly);
+    if( totalMonthly > 20000){
+        $('#monthlyCost').css('color', 'red');
+    }
     
 }
